@@ -34,9 +34,11 @@ function expect(actual) {
 // Here's what we do ...
 
 // test function make way easier to identify the error
-function test(title, callback) {
+
+// now it work both in sync and async test
+async function test(title, callback) {
   try {
-    callback();
+    await callback();
     console.log(`✓ ${title}`);
   } catch (error) {
     console.error(`✘ ${title}`);
