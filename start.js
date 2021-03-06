@@ -1,20 +1,17 @@
 const sum = (a, b) => a - b;
 const subtract = (a, b) => a - b;
-let result, expected;
-
-function sumTest() {
-  result = sum(3, 7);
-  expected = 10;
+// refactor
+test("sum add numbers", () => {
+  const result = sum(3, 7);
+  const expected = 10;
   expect(result).toBe(expected);
-}
-test("sum add numbers", sumTest);
+});
 
-function subtractTest() {
-  result = subtract(7, 3);
-  expected = 4;
+test("subtract subtracts numbers", () => {
+  const result = subtract(7, 3);
+  const expected = 4;
   expect(result).toBe(expected);
-}
-test("subtract subtracts numbers", subtractTest);
+});
 
 // it is imperative, let's make some abstraction
 
@@ -37,6 +34,7 @@ function expect(actual) {
 
 // Here's what we do ...
 
+// test function make way easier to identify the error
 function test(title, callback) {
   try {
     callback();
